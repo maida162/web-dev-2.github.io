@@ -1,0 +1,289 @@
+/* ========================== */
+/* RESET STYLES */
+/* ========================== */
+/* Basic reset to remove default margin, padding, and ensure consistent box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set global font and background color for the entire page */
+body {
+    font-family: 'Teko', sans-serif;
+    background-color: #231651; /* Background color */
+    color: #333; /* Default text color */
+}
+
+/* ========================== */
+/* HEADER STYLING */
+/* ========================== */
+
+/* Main header container with dark background and padding for spacing */
+header {
+    background-color: black; /* Dark background */
+    padding: 1rem 2rem; /* Padding for spacing */
+}
+
+/* Header container for logo and navigation layout */
+.header-container {
+    display: flex;
+    justify-content: space-between; /* Align logo and navigation to opposite ends */
+    align-items: center; /* Vertically center items */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    width: 100%;
+}
+
+/* Logo styling with bold teal color and margin for spacing */
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #4dccbd; /* Teal text color */
+    margin-bottom: 1rem;
+}
+
+/* Navigation links with teal color and hover underline effect */
+nav a {
+    color: #4dccbd; /* Teal links */
+    text-decoration: none;
+    margin-left: 1rem; /* Spacing between links */
+    font-size: 1.7rem; /* Larger font size for visibility */
+    margin-bottom: 0.5rem;
+}
+
+nav a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Search button with teal background and hover effect */
+.search-button {
+    padding: 0.5rem 1.5rem;
+    background-color: #4dccbd; /* Teal background */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+    margin-top: 1rem;
+}
+
+.search-button:hover {
+    background-color: #231651; /* Dark purple on hover */
+}
+
+/* ========================== */
+/* MOVIE CARDS STYLING */
+/* ========================== */
+
+/* General movie card layout with flexbox and spacing */
+.movie-card {
+    display: flex;
+    flex-direction: row; /* Arrange content horizontally */
+    align-items: center; /* Center-align content */
+    gap: 1rem; /* Space between elements */
+    background-color: #4dccbd; /* Teal background */
+    padding: 1.5rem;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    color: white; /* White text color */
+    margin-bottom: 1rem; /* Spacing between cards */
+    width: 100%; /* Full width */
+    height: 90%; /* Adjust height */
+}
+
+/* Movie poster styling with rounded corners */
+.movie-poster img {
+    width: 80%; /* Image occupies 80% of the container width */
+    height: 40%; /* Maintain aspect ratio */
+    border-radius: 5px; /* Rounded corners */
+}
+
+/* Movie title styling */
+.movie-content h3 {
+    font-size: 2rem; /* Larger title font */
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+/* Movie description styling */
+.movie-content p {
+    font-size: 1.5rem;
+    line-height: 1.5; /* Improve readability */
+}
+
+/* Watch button with hover effect */
+button.watch-button {
+    padding: 1rem 2rem;
+    background-color: #231651; /* Dark purple */
+    color: #4dccbd; /* Teal text */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
+}
+
+button.watch-button:hover {
+    background-color: black; /* Darker background on hover */
+    color: #4dccbd; /* Teal text remains */
+}
+
+/* Featured Barbie movie specific styling */
+.movie-card.featured-barbie {
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center-align items */
+    background-color: #4dccbd; /* Teal background */
+    text-align: center; /* Centered text */
+}
+
+.movie-card.featured-barbie .movie-poster img {
+    width: 90%; /* Larger image for featured card */
+}
+
+/* Special row layout for multiple cards */
+.special-row {
+    display: flex;
+    justify-content: space-between; /* Distribute cards evenly */
+    gap: 1rem; /* Space between cards */
+}
+
+/* Special layout cards with horizontal layout */
+.movie-card.special-layout {
+    flex-direction: row;
+    gap: 1rem;
+    background-color: #4dccbd;
+}
+
+.movie-card.special-layout .movie-poster img {
+    width: 70%; /* Smaller width for images in special layout */
+}
+
+/* Horizontal movie cards with row layout */
+.horizontal {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+/* ========================== */
+/* MOVIE CARDS CONTAINER */
+/* ========================== */
+.main-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow cards to wrap */
+    justify-content: space-between; /* Distribute cards evenly */
+    gap: 2rem; /* Spacing between rows */
+    padding: 0;
+}
+
+/* ========================== */
+/* RESPONSIVE STYLES */
+/* ========================== */
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    /* Stack header content vertically */
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        align-self: center;
+        width: 100%; /* Full width */
+        position: relative;
+    }
+
+    .logo {
+        margin-bottom: 1rem;
+    }
+
+    nav {
+        margin-top: 1rem;
+        flex-direction: column; /* Stack links vertically */
+    }
+
+    nav a {
+        margin-left: 0;
+        margin-bottom: 0.5rem; /* Spacing between links */
+    }
+
+    .search-button {
+        margin-top: 1rem;
+        width: 45%; 
+    }
+
+    /* Stack movie cards vertically */
+    .main-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .movie-card {
+        flex-direction: row;
+        align-items: center;
+        width: 90%; 
+    }
+
+    .movie-poster img {
+        width: 90%; 
+    }
+
+    .movie-card.featured-barbie .movie-poster img {
+        width: 90%;
+    }
+
+    .movie-card.special-layout .movie-poster img {
+        width: 70%;
+    }
+}
+
+/* Tablet responsiveness */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .header-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-self: center;
+        width: 100%;
+        position: relative;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: row;
+    }
+
+    nav a {
+        margin-left: 1rem;
+        font-size: 1.1rem;
+    }
+
+    .search-button {
+        padding: 0.7rem 1.8rem;
+        font-size: 1.1rem;
+    }
+
+    /* Adjust card layout for tablets */
+    .movie-card {
+        flex-direction: row;
+        align-items: center;
+        width: 90%; 
+        margin-bottom: 1.5rem;
+    }
+
+    .movie-poster img {
+        width: 90%; 
+    }
+
+    .movie-card.featured-barbie .movie-poster img {
+        width: 90%;
+    }
+
+    .movie-card.special-layout .movie-poster img {
+        width: 90%;
+    }
+
+    .special-row {
+        flex-direction: row; /* Row layout for cards */
+        justify-content: space-between;
+    }
+}
